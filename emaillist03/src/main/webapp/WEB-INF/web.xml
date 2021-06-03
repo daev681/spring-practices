@@ -15,10 +15,14 @@
 		<url-pattern>/</url-pattern>
 	</servlet-mapping>
 
+
+     <!-- ContextLoad Lostener -->
 	<listener>
 		<listener-class> org.springframework.web.context.ContextLoaderListener </listener-class>
 	</listener>
 
+
+     <!--  Context Parameter -->
 	<context-param>
 		<param-name> contextConfigLocation </param-name>
 		<param-value>/WEB-INF/applicationContext.xml</param-value>
