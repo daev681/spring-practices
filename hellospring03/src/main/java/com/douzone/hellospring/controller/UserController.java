@@ -33,6 +33,7 @@ public class UserController {
 	@RequestMapping(value = "/join" , method = RequestMethod.POST)
 	public String join(@ModelAttribute UserVo vo) { // UserVo vo Model model
 		// model.addAttribute("userVo, vo");
+	
 		System.out.println(vo);
 		return "redirect:/";
 	}
