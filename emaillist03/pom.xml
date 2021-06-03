@@ -7,11 +7,10 @@
 		<artifactId>spring-practices</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
-	<artifactId>hellospring03</artifactId>
+	<artifactId>emaillist03</artifactId>
 	<packaging>war</packaging>
-
 	<properties>
-		<org.springframework-version>4.2.1.RELEASE</org.springframework-version>
+		<org.springframework-version>4.3.4.RELEASE</org.springframework-version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -20,6 +19,7 @@
 			<version>${org.springframework-version}</version>
 		</dependency>
 
+          <!-- Spring Web MVC -->
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-webmvc</artifactId>
@@ -32,25 +32,10 @@
 			<artifactId>spring-web</artifactId>
 			<version>${org.springframework-version}</version>
 		</dependency>
-
-		<!-- MariaDB JDBC Driver -->
-		<dependency>
-			<groupId>org.mariadb.jdbc</groupId>
-			<artifactId>mariadb-java-client</artifactId>
-			<version>2.4.4</version>
-		</dependency>
-
-		<!-- jstl -->
-		<dependency>
-			<groupId>jstl</groupId>
-			<artifactId>jstl</artifactId>
-			<version>1.2</version>
-		</dependency>
-
 	</dependencies>
-
+	
 	<build>
-		<finalName>hellospring03</finalName>
+		<finalName>emailist03</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -66,7 +51,7 @@
 				<artifactId>tomcat-maven-plugin</artifactId>
 				<configuration>
 					<url>http://192.168.80.119:8080/manager/text</url>
-					<path>/hellospring03</path>
+					<path>/emailist03</path>
 					<username>admin</username>
 					<password>manager</password>
 				</configuration>
