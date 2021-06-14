@@ -64,11 +64,15 @@ public class DVDPlayerXmlConfigTest {
 	@Autowired
 	@Qualifier("avengersExpansionPack3")
 	private DigitalVideoDisc dvd10;
+
+	@Autowired
+	@Qualifier("avengersTriplepack")
+	private DVDPack dvdPack;
 	
 	@Autowired
 	@Qualifier("dvdPlayer1")
 	private DVDPlayer player1;
-	
+
 	@Autowired
 	@Qualifier("dvdPlayer2")
 	private DVDPlayer player2;
@@ -77,10 +81,13 @@ public class DVDPlayerXmlConfigTest {
 	@Qualifier("dvdPlayer3")
 	private DVDPlayer player3;
 
+	@Autowired
+	@Qualifier("dvdPlayer4")
+	private DVDPlayer player4;
 
 	@Autowired
-	@Qualifier("avengersTriplepack")
-	private DVDPack dvdPack;
+	@Qualifier("dvdPlayer5")
+	private DVDPlayer player5;
 	
 	@Ignore
 	@Test
@@ -137,25 +144,35 @@ public class DVDPlayerXmlConfigTest {
 	public void testDVDPack() {
 		assertNotNull(dvdPack);
 	}
-	
+
 	@Test
 	public void testPlay1() {
 		player1.play();
-		assertEquals("Playing Movie Marvel : IronMan", systemOutRule.getLog().replace("\r\n", "").replace("\n", ""));
-		
+		assertEquals("Playing Movie MARVEL's IronMan", systemOutRule.getLog().replace("\r\n", "").replace("\n", ""));
 	}
 	
 	@Test
 	public void testPlay2() {
 		player2.play();
-		assertEquals("Playing Movie Marvel : IronMan", systemOutRule.getLog().replace("\r\n", "").replace("\n", ""));
-		
+		assertEquals("Playing Movie MARVEL's IronMan", systemOutRule.getLog().replace("\r\n", "").replace("\n", ""));
 	}
-	
+
 	@Test
 	public void testPlay3() {
 		player3.play();
-		assertEquals("Playing Movie Marvel : IronMan", systemOutRule.getLog().replace("\r\n", "").replace("\n", ""));
-		
+		assertEquals("Playing Movie MARVEL's IronMan", systemOutRule.getLog().replace("\r\n", "").replace("\n", ""));
 	}
+
+	@Test
+	public void testPlay4() {
+		player4.play();
+		assertEquals("Playing Movie MARVEL's Avengers Director Edition", systemOutRule.getLog().replace("\r\n", "").replace("\n", ""));
+	}
+
+	@Test
+	public void testPlay5() {
+		player5.play();
+		assertEquals("Playing Movie MARVEL's Avengers Director Edition", systemOutRule.getLog().replace("\r\n", "").replace("\n", ""));
+	}
+	
 }
